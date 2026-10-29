@@ -13,13 +13,21 @@
     '.rci-hdr p{font-size:12px;color:#666;margin:2px 0 0}' +
     '.rci-hdr .rci-hub{margin-left:auto;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#CC0000;text-decoration:none;border:1.5px solid #CC0000;border-radius:4px;padding:6px 12px;white-space:nowrap}' +
     '.rci-hdr .rci-hub:hover{background:#CC0000;color:#fff}' +
-    '.rci-ftr{text-align:center;padding:20px;color:#aaa;font-size:11px;text-transform:uppercase;letter-spacing:1px;font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}' +
+    '.rci-ftr{background:#1c1c1c;border-top:3px solid #CC0000;color:#fff;text-align:center;padding:14px 16px;font-family:"Roboto Slab",serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.08em}' +
+    /* '.rci-ftr{text-align:center;padding:20px;color:#aaa;font-size:11px;text-transform:uppercase;letter-spacing:1px;font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}' + */
     '@media(max-width:480px){.rci-hdr{padding:10px 16px;gap:10px}.rci-hdr img{height:40px}.rci-hdr .rci-div{display:none}.rci-hdr h1{font-size:15px}}';
 
+  /* var st = document.createElement('style');
+  st.textContent = css;
+  document.head.appendChild(st); */ 
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
-
+  var fl = document.createElement('link');
+  fl.rel = 'stylesheet';
+  fl.href = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap';
+  document.head.appendChild(fl);
+  
   var h = document.createElement('header');
   h.className = 'rci-hdr';
   h.innerHTML =
