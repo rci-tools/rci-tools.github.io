@@ -44,7 +44,8 @@
   // Install instructions show ONLY at rci-tools.github.io/?setup (and never from the icon).
   // Everything else goes straight to the hub.
   const SETUP = new URLSearchParams(location.search).has('setup');
-  if (!SETUP || fromIcon) location.replace(APP_URL);
+  if (fromIcon)    location.replace(APP_URL + '?app=1');
+  else if (!SETUP) location.replace(APP_URL);
 </script>  
 
 <style>
