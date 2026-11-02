@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-title" content="RCI Tools">
 <meta name="theme-color" content="#d90000">
 
-<script>
+<!-- <script>
   // ── The ONLY line to change if the hub's Apps Script URL ever changes ──
   const APP_URL = "https://script.google.com/a/macros/rightchoiceimprovements.com/s/AKfycbwInayEdkCs4GLFggeQAq8j_2S4_35qIop67sZ2k6cBRmw44VTX2vdA6T0A3SuWQO69SA/exec";
 
@@ -31,7 +31,21 @@
   // Everywhere else: show the hub framed so the window never leaves rci-tools.github.io
   const FRAMED = false;
   if (FRAMED) document.write('<style>html,body{margin:0;height:100%;overflow:hidden}body>*:not(iframe){display:none!important}</style>');
-</script>
+</script> -->
+
+<script>
+  // ── The ONLY line to change if the hub's Apps Script URL ever changes ──
+  const APP_URL = "https://script.google.com/a/macros/rightchoiceimprovements.com/s/AKfycbwInayEdkCs4GLFggeQAq8j_2S4_35qIop67sZ2k6cBRmw44VTX2vdA6T0A3SuWQO69SA/exec";
+
+  // Opened from the installed icon?
+  const fromIcon = window.matchMedia('(display-mode: standalone)').matches ||
+                   window.navigator.standalone === true;
+
+  // Install instructions show ONLY at rci-tools.github.io/?setup (and never from the icon).
+  // Everything else goes straight to the hub.
+  const SETUP = new URLSearchParams(location.search).has('setup');
+  if (!SETUP || fromIcon) location.replace(APP_URL);
+</script>  
 
 <style>
   * { box-sizing:border-box; }
@@ -92,7 +106,7 @@
   </div>
 </main>
 
-<script>
+<!-- <script>
   document.getElementById('open').href = APP_URL;
   if (FRAMED) {
     const f = document.createElement('iframe');
@@ -100,6 +114,9 @@
     f.style.cssText = 'border:0;width:100%;height:100%;display:block';
     document.body.appendChild(f);
   }
-</script>
+</script> -->
+
+<script>document.getElementById('open').href = APP_URL;</script>
+  
 </body>
 </html>
