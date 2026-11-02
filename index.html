@@ -26,10 +26,10 @@
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-  if (fromIcon && isIOS) location.replace(APP_URL);
+  if (fromIcon) location.replace(APP_URL);
 
   // Everywhere else: show the hub framed so the window never leaves rci-tools.github.io
-  const FRAMED = fromIcon && !isIOS;
+  const FRAMED = false;
   if (FRAMED) document.write('<style>html,body{margin:0;height:100%;overflow:hidden}body>*:not(iframe){display:none!important}</style>');
 </script>
 
